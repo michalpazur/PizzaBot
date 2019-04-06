@@ -11,6 +11,7 @@ apiKey = '<YOUR_API_KEY>'
 
 facebook = facebook.GraphAPI(apiKey)
 message = makePizza.makePizza(loc)
+print(message)
 
 response = facebook.put_photo(image=open(os.path.join(loc, 'pizza2.png'), 'rb'), message=message)
 postId = response['post_id']

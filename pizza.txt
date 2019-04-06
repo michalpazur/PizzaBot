@@ -4,15 +4,25 @@ cucumber cucumber
 jalapeno jalapeño peppers
 pepperoni pepperoni
 pineapple pineapple
-poached_egg poached egg
+poached_egg sunny side up egg
 shrimps shrimps
 rat dead rat
 banana banana
 mushrooms mushrooms
-potatoes potatoes
+tomatoes tomatoes
 peppers peppers
 olives olives
 feta feta
 brie brie
-mozarella mozarella
+mozzarella mozzarella
 lemons lemons
+coffee coffee beans
+fries McDonald's french fries
+gum used chewing gum
+nuggets Chicken McNuggets
+sandler Adam Sandler
+tortilla tortilla
+sweet_fries sweet potato fries
+xanax Xanax
+potatoes potatoes
+toothpaste toothpaste

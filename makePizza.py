@@ -11,7 +11,18 @@ def formatString(ingredients, halves, isDouble):
     x = 0
     for ingredient in ingredients:
         if len(ingredients) > 1:
-            if x != len(ingredients) - 1:
+            if x == 0:
+                s1 = ""
+                if isDouble[x]:
+                    s1 += 'double '
+                if halves[x] != 'whole':
+                    s1 += halves[x] + ' '
+                s += s1.capitalize()
+                if ingredient[x] > 'Z' and s == '':
+                    s += ingredient.capitalize() + ', '
+                else:
+                    s += ingredient + ', '
+            elif x != len(ingredients) - 1:
                 if isDouble[x]:
                     s += 'double '
                 if halves[x] != 'whole':
@@ -30,20 +41,25 @@ def formatString(ingredients, halves, isDouble):
 
         elif len(ingredients) == 1:
             if isDouble[x]:
-                    s += 'double '
+                s += 'double '
             if halves[x] != 'whole':
-                s += halves[x] + ' ' 
-            s += ingredient + '.'
+                s += halves[x] + ' '
+                
+            s = s.capitalize()
+            if ingredient[x] > 'Z' and s == '':
+                s += ingredient.capitalize() + '.'
+            else:
+                s += ingredient + '.'
+            
         else:
             s += random.choice(nothing)
             #not possible for now
-    s = s.replace('  ', ' ').capitalize()
-    print(s)
+    s = s.replace('  ', ' ')
     return s
 
 def makePizza(loc):
     with open(os.path.join(loc, 'pizza.txt')) as f:
-        textFile = f.read()
+        textFile = f.read().decode('utf-8-sig').encode('utf-8')
         
     lines = textFile.splitlines()
     ingredientsDict = {}
@@ -84,11 +100,9 @@ def makePizza(loc):
         
     pizzaImage.save(os.path.join(loc, 'pizza2.png'))
     extraS = ""
-    if random.random() > 0.8:
+    if random.random() > 0.9:
         extraS = random.choice(extra)
-    returnString = formatString(ingredients, halves, isDouble) + " " + extraS
-    print(returnString)
-    return returnString
+    return formatString(ingredients, halves, isDouble) + " " + extraS
 
 def addIngredient(loc, pizzaImage, ingredient, half, isDouble):
     ingredientImg = Image.open(os.path.join(loc, 'ingredients', ingredient, str(ingredient + '_' + half + '.png')))
