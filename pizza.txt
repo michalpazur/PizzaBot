@@ -26,3 +26,11 @@ sweet_fries sweet potato fries
 xanax Xanax
 potatoes potatoes
 toothpaste toothpaste
+cheetos Flamin' Hot Cheetos
+avocado avocado
+avocado_seed avocado seeds
+mms M&Ms
+sushi sushi
+meatballs meatballs
+fish_head fish head
+kiwi kiwi
