@@ -34,3 +34,12 @@ sushi sushi
 meatballs meatballs
 fish_head fish head
 kiwi kiwi
+beans beans
+egg hard boiled egg
+tofu tofu block
+crayons crayons
+dog_food dog food
+cat_food cat food
+noodles instant nodles
+candy_corn candy corn
+corn corn
