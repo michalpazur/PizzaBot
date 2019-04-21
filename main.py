@@ -10,7 +10,8 @@ apiKey = '<YOUR_TEST_API_KEY>'
 apiKey = '<YOUR_API_KEY>'
 
 facebook = facebook.GraphAPI(apiKey)
-message = makePizza.makePizza(loc)
+
+message = makePizza.makePizza(loc, False)[0]
 print(message)
 
 response = facebook.put_photo(image=open(os.path.join(loc, 'pizza2.png'), 'rb'), message=message)

@@ -1,4 +1,4 @@
-﻿bacon bacon
+bacon bacon
 broccoli broccoli
 cucumber cucumber
 jalapeno jalapeño peppers
@@ -43,3 +43,10 @@ cat_food cat food
 noodles instant nodles
 candy_corn candy corn
 corn corn
+oreo Oreos
+syringe used syringes
+cockroach cockroaches
+dust dust
+onion_rings onion rings
+hair hair strands
+bones bones 
