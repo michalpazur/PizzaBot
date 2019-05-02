@@ -1,4 +1,4 @@
-bacon
+﻿bacon
 broccoli
 cucumber
 jalapeño peppers
@@ -50,3 +50,11 @@ onion rings
 syringe
 cockroaches
 bones
+american cheese
+AirPods
+Minecraft diamonds
+JoyCons
+nails
+plastic fork
+spiders
+screws

@@ -40,7 +40,7 @@ tofu tofu block
 crayons crayons
 dog_food dog food
 cat_food cat food
-noodles instant nodles
+noodles instant noodles
 candy_corn candy corn
 corn corn
 oreo Oreos
@@ -49,4 +49,12 @@ cockroach cockroaches
 dust dust
 onion_rings onion rings
 hair hair strands
-bones bones 
+bones bones
+am_cheese american cheese
+airpods AirPods
+diamonds Minecraft diamonds
+joycon JoyCons
+nails nails
+plastic_fork plastic fork
+screws screws
+spiders spiders

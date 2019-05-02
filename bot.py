@@ -53,6 +53,10 @@ async def pizzasubmit(ctx, *ingredients):
 @bot.command()
 async def pizzahelp(ctx):
     await ctx.trigger_typing()
-    await ctx.send('```{}```'.format("P I Z Z A B O T H E L P:\n*pizza\tGenerate a yummy pizza.\n*submit\tHelp creating the PizzaBot by submitting your own ingredients.\n*help\tDisplay this message.".expandtabs()))
+    embed = discord.Embed(title = "PizzaBot Help", description = "Use the '*' prefix to access PizzaBot's commands.", color = 0x95d6ff)
+    embed.add_field(name = 'pizza', value = 'Generates a yummy pizza 😋', inline = False)
+    embed.add_field(name = 'pizzasubmit', value = 'Help creating PizzaBot by submitting your own toppings.', inline = False)
+    embed.add_field(name = 'pizzahelp', value = 'Displays this message.', inline = False)
+    await ctx.send(embed = embed)
 
 bot.run(token)
