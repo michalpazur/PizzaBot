@@ -1,4 +1,4 @@
-bacon bacon
+﻿bacon bacon
 broccoli broccoli
 cucumber cucumber
 jalapeno jalapeño peppers
@@ -10,12 +10,12 @@ rat dead rat
 banana banana
 mushrooms mushrooms
 tomatoes tomatoes
-peppers peppers
+peppers bell peppers
 olives olives
 feta feta
 brie brie
 mozzarella mozzarella
-lemons lemons
+lemons lemon slices
 coffee coffee beans
 fries McDonald's french fries
 gum used chewing gum
@@ -58,3 +58,16 @@ nails nails
 plastic_fork plastic fork
 screws screws
 spiders spiders
+beef_jerky beef jerky
+cookie chocolate chip cookies
+doritos Nacho Cheese Doritos
+flies flies
+ice ice cubes
+intel Intel Core i7-8700k
+oranges orange slices
+rubber_chicken rubber chickens
+ryzen AMD Ryzen 5 1600
+screwdriver screwdrivers
+teeth teeth
+toothbrush toothbrush
+wings chicken wings

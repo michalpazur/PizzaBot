@@ -7,7 +7,7 @@ loc = '<YOUR_PROJECT_LOCATION>'
 
 @bot.listen()
 async def on_ready():
-    print('---PizzaBot is now online---' + str(datetime.datetime.now()) + '---')
+    print('---PizzaBot is now online---' + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + '---')
     game = discord.Game('*pizzahelp')
     await bot.change_presence(status = discord.Status.online, activity = game)
 
@@ -57,6 +57,7 @@ async def pizzahelp(ctx):
     embed.add_field(name = 'pizza', value = 'Generates a yummy pizza 😋', inline = False)
     embed.add_field(name = 'pizzasubmit', value = 'Help creating PizzaBot by submitting your own toppings.', inline = False)
     embed.add_field(name = 'pizzahelp', value = 'Displays this message.', inline = False)
+    embed.add_field(name = 'About PizzaBot:', value = 'Total ingredients: 73.\nVersion: 2019-05-10.\nCreated by @kolorowytoster, local time: {} (UTC +2).\nSource code available on GitHub: https://github.com/kolorowytoster/PizzaBot'.format(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')), inline = False)
     await ctx.send(embed = embed)
 
 bot.run(token)
