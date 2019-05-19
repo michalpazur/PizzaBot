@@ -1,21 +1,23 @@
 import random, datetime, PIL, os, io
+from random import shuffle
 from time import clock
-from PIL import Image
+from PIL import Image, ImageEnhance, ImageOps
 
-extra = ["This pizza is suitable for the whole family.",
+extra = ["This pizza is then burnt to a crisp.",
+"This pizza is then deepfried.",
+"This pizza has been fitted with RGB lights.",
+"This pizza is suitable for the whole family.",
 "This pizza is gluten free.",
 "This recipe has been passed through generations.",
 "Best served with one of BartenderBot's drinks.",
 "Best served cold.",
-"This pizza is then burnt to a crisp.",
-"This pizza is then deep fried.",
+"Best served hot."
 "Best served over ice.",
-"Best before: {}.".format(datetime.date.fromordinal(random.randint(725000, 740000))),
-"Best served hot."]
+"Best before: {}.".format(datetime.date.fromordinal(random.randint(725000, 740000)))]
 nothing = ['welcome to the void', "There's nothing for you.", 'Check out another pizza.']
 andArr = ['and', 'finished off with', 'topped with', 'with some', 'with addition of']
 
-def formatString(ingredients, halves, isDouble, loc):
+def formatString(ingredients, halves, isDouble):
     s = ""
     x = 0
     for ingredient in ingredients:
@@ -63,12 +65,13 @@ def makePizza(loc, isDiscord):
 
     for i in range(ingredientsAmmout):
 
-        if i == 0 and random.random() > 0.99 and not isDiscord:
+        if i == 0 and random.random() > 0.995 and not isDiscord:
             ingredientId = 'previous'
             ingredients.append('previous pizza, just a bit smaller')
             halves.append("whole")
             isDouble.append(False)
         else:
+            shuffle(ingredientsIds)
             ingredientId = random.choice(ingredientsIds)
             ingredients.append(ingredientsDict[ingredientId])
             ingredientsDict.pop(ingredientId)
@@ -90,6 +93,20 @@ def makePizza(loc, isDiscord):
         
         pizzaImage = addIngredient(loc, pizzaImage, ingredientId, halves[i], isDouble[i])
         
+    extraS = ""
+    if random.random() > 0.85:
+        randomChoice = random.randint(0, len(extra) - 1)
+        if randomChoice == 0:
+            print("Burning to a crisp...")
+            #pizzaImage = burn(pizzaImage)
+        elif randomChoice == 1:
+            print("Deepfrying...")
+            pizzaImage = deepfry(pizzaImage)
+        elif randomChoice == 2:
+            print("Fitting some sweet RGB lights...")
+            pizzaImage = fitRGBLights(pizzaImage, loc)
+        extraS = "\n" + extra[randomChoice]
+
     buffer = None
     if (not isDiscord):
         pizzaImage.save(os.path.join(loc, 'pizza2.png'))
@@ -97,10 +114,7 @@ def makePizza(loc, isDiscord):
         buffer = io.BytesIO()
         pizzaImage.save(buffer, 'png')
 
-    extraS = ""
-    if random.random() > 0.75:
-        extraS = "\n" + random.choice(extra)
-    return formatString(ingredients, halves, isDouble, loc) + " " + extraS, buffer
+    return formatString(ingredients, halves, isDouble) + extraS, buffer
 
 def addIngredient(loc, pizzaImage, ingredient, half, isDouble):
     if(ingredient != 'previous'):
@@ -117,4 +131,28 @@ def addIngredient(loc, pizzaImage, ingredient, half, isDouble):
         toPaste.paste(ingredientImg, (85, 37), ingredientImg)
         pizzaImage = Image.alpha_composite(pizzaImage, toPaste)
 
+    return pizzaImage
+    
+#TODO
+def burn(pizzaImage):
+    r, g, b, a = pizzaImage.split()
+    pizzaImage = ImageEnhance.Brightness(pizzaImage).enhance(0.1)
+    pizzaImage = ImageEnhance.Contrast(pizzaImage).enhance(8)
+    return pizzaImage
+
+def deepfry(pizzaImage):
+    r, g, b, a = pizzaImage.split()
+    pizzaImage = Image.merge('RGB', (r, g, b))
+    pizzaImage = ImageOps.posterize(pizzaImage, 2)
+    pizzaImage = ImageEnhance.Brightness(pizzaImage).enhance(1.2)
+    pizzaImage = ImageEnhance.Contrast(pizzaImage).enhance(2)
+    pizzaImage = ImageEnhance.Color(pizzaImage).enhance(2)
+    pizzaImage = ImageEnhance.Sharpness(pizzaImage).enhance(100)
+    r, g, b = pizzaImage.split()
+    pizzaImage = Image.merge('RGBA', (r, g, b, a))
+    return pizzaImage
+
+def fitRGBLights(pizzaImage, loc):
+    rgbLights = Image.open(os.path.join(loc, 'rgb.png'))
+    pizzaImage = Image.alpha_composite(rgbLights, pizzaImage)
     return pizzaImage

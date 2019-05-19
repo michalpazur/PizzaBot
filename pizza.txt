@@ -71,3 +71,11 @@ screwdriver screwdrivers
 teeth teeth
 toothbrush toothbrush
 wings chicken wings
+rasins rasins
+pine_cones pine cones
+popcorn popcorn
+mints peppermints
+qtips Q-Tips
+legos Lego bricks
+coal coal
+super_glue super glue
