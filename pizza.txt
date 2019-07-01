@@ -79,3 +79,13 @@ qtips Q-Tips
 legos Lego bricks
 coal coal
 super_glue super glue
+ants
+pizza_saver pizza savers
+pierogi pierogi
+ice_cream ice cream
+bullets bullets
+pickles pickles
+pasta dry pasta
+joint joint
+snails snails
+frog_legs frog legs

@@ -6,12 +6,13 @@ from PIL import Image, ImageEnhance, ImageOps
 extra = ["This pizza is then burnt to a crisp.",
 "This pizza is then deepfried.",
 "This pizza has been fitted with RGB lights.",
+"This pizza has been flipped.",
 "This pizza is suitable for the whole family.",
 "This pizza is gluten free.",
 "This recipe has been passed through generations.",
 "Best served with one of BartenderBot's drinks.",
 "Best served cold.",
-"Best served hot."
+"Best served hot.",
 "Best served over ice.",
 "Best before: {}.".format(datetime.date.fromordinal(random.randint(725000, 740000)))]
 nothing = ['welcome to the void', "There's nothing for you.", 'Check out another pizza.']
@@ -105,6 +106,9 @@ def makePizza(loc, isDiscord):
         elif randomChoice == 2:
             print("Fitting some sweet RGB lights...")
             pizzaImage = fitRGBLights(pizzaImage, loc)
+        elif randomChoice == 3:
+            print("Flipping the pizza...")
+            pizzaImage = ImageOps.flip(pizzaImage)
         extraS = "\n" + extra[randomChoice]
 
     buffer = None
