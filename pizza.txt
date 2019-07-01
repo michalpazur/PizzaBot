@@ -6,7 +6,7 @@ pepperoni pepperoni
 pineapple pineapple
 poached_egg sunny side up egg
 shrimps shrimps
-rat dead rat
+rat hopefully dead rat
 banana banana
 mushrooms mushrooms
 tomatoes tomatoes
@@ -31,7 +31,7 @@ avocado avocado
 avocado_seed avocado seeds
 mms M&Ms
 sushi sushi
-meatballs meatballs
+meatballs Swedish meatballs
 fish_head fish head
 kiwi kiwi
 beans beans
@@ -44,7 +44,7 @@ noodles instant noodles
 candy_corn candy corn
 corn corn
 oreo Oreos
-syringe used syringes
+syringe slightly used syringes
 cockroach cockroaches
 dust dust
 onion_rings onion rings
@@ -68,24 +68,24 @@ oranges orange slices
 rubber_chicken rubber chickens
 ryzen AMD Ryzen 5 1600
 screwdriver screwdrivers
-teeth teeth
+teeth unbrushed teeth
 toothbrush toothbrush
-wings chicken wings
+wings hot chicken wings
 rasins rasins
 pine_cones pine cones
 popcorn popcorn
 mints peppermints
 qtips Q-Tips
 legos Lego bricks
-coal coal
+coal a few lumps of coal
 super_glue super glue
-ants
-pizza_saver pizza savers
-pierogi pierogi
+ants ants
+pizza_savers pizza savers
+pierogi Polish pierogis
 ice_cream ice cream
 bullets bullets
-pickles pickles
+pickles pickle slices
 pasta dry pasta
-joint joint
+joint joints
 snails snails
 frog_legs frog legs
