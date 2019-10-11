@@ -2,7 +2,7 @@ import facebook, os, makePizza
 
 os.environ["PYTHONIOENCODING"] = "utf-8"
 
-loc = '<YOUR_PROJECT_LOCATION>'
+loc = os.path.dirname(os.path.abspath(__file__))
 
 #this is a test API KEY (not required)
 apiKey = '<YOUR_TEST_API_KEY>'
