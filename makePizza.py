@@ -3,7 +3,19 @@ from random import shuffle
 from time import clock
 from PIL import Image, ImageEnhance, ImageOps
 
-extra = [
+extra = ["This pizza is then burnt to a crisp.",
+"This pizza is then deepfried.",
+"This pizza has been fitted with RGB lights.",
+"This pizza has been flipped.",
+"Best served in Australia",
+"This pizza is suitable for the whole family.",
+"This pizza is gluten free.",
+"This recipe has been passed through generations.",
+"Best served with one of BartenderBot's drinks.",
+"Best served cold.",
+"Best served hot.",
+"Best served over ice.",
+"Best before: {}.".format(datetime.date.fromordinal(random.randint(725000, 740000))),
 "@{} has to eat this pizza.".format(chr(random.randint(65, 90)))]
 nothing = ['welcome to the void', "There's nothing for you.", 'Check out another pizza.']
 andArr = ['and', 'finished off with', 'topped with', 'with some', 'with addition of']
