@@ -3,20 +3,11 @@ from random import shuffle
 from time import clock
 from PIL import Image, ImageEnhance, ImageOps
 
-extra = ["This pizza is then burnt to a crisp.",
-"This pizza is then deepfried.",
-"This pizza has been fitted with RGB lights.",
-"This pizza has been flipped.",
-"This pizza is suitable for the whole family.",
-"This pizza is gluten free.",
-"This recipe has been passed through generations.",
-"Best served with one of BartenderBot's drinks.",
-"Best served cold.",
-"Best served hot.",
-"Best served over ice.",
-"Best before: {}.".format(datetime.date.fromordinal(random.randint(725000, 740000)))]
+extra = [
+"@{} has to eat this pizza.".format(chr(random.randint(65, 90)))]
 nothing = ['welcome to the void', "There's nothing for you.", 'Check out another pizza.']
 andArr = ['and', 'finished off with', 'topped with', 'with some', 'with addition of']
+pies = {'stop' : 'a stop sign.', 'ipad' : 'an iPad Pro.'}
 
 def formatString(ingredients, halves, isDouble):
     s = ""
@@ -48,8 +39,8 @@ def formatString(ingredients, halves, isDouble):
     return s
 
 def makePizza(loc, isDiscord):
-    with open(os.path.join(loc, 'pizza.txt'), encoding='utf-8-sig') as f:
-        textFile = f.read()
+    with open(os.path.join(loc, 'pizza.txt'), encoding='utf-8-sig') as file:
+        textFile = file.read()
     lines = textFile.splitlines()
     ingredientsDict = {}
 
@@ -62,7 +53,15 @@ def makePizza(loc, isDiscord):
     ingredients = []
     halves = []
     isDouble = []
-    pizzaImage = Image.open(os.path.join(loc, 'pizza.png'))
+    hasDifferentPie = False
+
+    if random.random() > 0.85:
+        pieList = list(pies)
+        pie = random.choice(pieList)
+        pizzaImage = Image.open(os.path.join(loc, 'pies', pie + '.png'))
+        hasDifferentPie = True
+    else:
+        pizzaImage = Image.open(os.path.join(loc, 'pizza.png'))
 
     for i in range(ingredientsAmmout):
 
@@ -106,7 +105,7 @@ def makePizza(loc, isDiscord):
         elif randomChoice == 2:
             print("Fitting some sweet RGB lights...")
             pizzaImage = fitRGBLights(pizzaImage, loc)
-        elif randomChoice == 3:
+        elif randomChoice < 5:
             print("Flipping the pizza...")
             pizzaImage = ImageOps.flip(pizzaImage)
         extraS = "\n" + extra[randomChoice]
@@ -118,7 +117,12 @@ def makePizza(loc, isDiscord):
         buffer = io.BytesIO()
         pizzaImage.save(buffer, 'png')
 
-    return formatString(ingredients, halves, isDouble) + extraS, buffer
+    finalString = formatString(ingredients, halves, isDouble) + extraS
+
+    if (hasDifferentPie):
+        finalString = finalString + ' The pie is now a ' + pies[pie]  
+
+    return finalString, buffer
 
 def addIngredient(loc, pizzaImage, ingredient, half, isDouble):
     if(ingredient != 'previous'):
@@ -139,7 +143,7 @@ def addIngredient(loc, pizzaImage, ingredient, half, isDouble):
     
 #TODO
 def burn(pizzaImage):
-    r, g, b, a = pizzaImage.split()
+    #r, g, b, a = pizzaImage.split()
     pizzaImage = ImageEnhance.Brightness(pizzaImage).enhance(0.1)
     pizzaImage = ImageEnhance.Contrast(pizzaImage).enhance(8)
     return pizzaImage

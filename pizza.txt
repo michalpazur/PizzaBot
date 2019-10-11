@@ -24,11 +24,9 @@ sandler Adam Sandler
 tortilla tortilla
 sweet_fries sweet potato fries
 xanax Xanax
-potatoes potatoes
 toothpaste toothpaste
 cheetos Flamin' Hot Cheetos
-avocado avocado
-avocado_seed avocado seeds
+avocado avocado slices
 mms M&Ms
 sushi sushi
 meatballs Swedish meatballs
@@ -40,7 +38,6 @@ tofu tofu block
 crayons crayons
 dog_food dog food
 cat_food cat food
-noodles instant noodles
 candy_corn candy corn
 corn corn
 oreo Oreos
@@ -50,7 +47,7 @@ dust dust
 onion_rings onion rings
 hair hair strands
 bones bones
-am_cheese american cheese
+am_cheese American cheese
 airpods AirPods
 diamonds Minecraft diamonds
 joycon JoyCons
@@ -65,19 +62,17 @@ flies flies
 ice ice cubes
 intel Intel Core i7-8700k
 oranges orange slices
-rubber_chicken rubber chickens
 ryzen AMD Ryzen 5 1600
 screwdriver screwdrivers
 teeth unbrushed teeth
-toothbrush toothbrush
-wings hot chicken wings
-rasins rasins
+toothbrush toothbrushes
+rasins raisins
 pine_cones pine cones
 popcorn popcorn
 mints peppermints
 qtips Q-Tips
 legos Lego bricks
-coal a few lumps of coal
+coal lumps of coal
 super_glue super glue
 ants ants
 pizza_savers pizza savers
@@ -86,6 +81,5 @@ ice_cream ice cream
 bullets bullets
 pickles pickle slices
 pasta dry pasta
-joint joints
+joints joints
 snails snails
-frog_legs frog legs
